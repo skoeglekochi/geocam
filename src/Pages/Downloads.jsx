@@ -84,12 +84,11 @@ export default function Downloads() {
       setSelectedVideos(allVideoIds);
     }
   };
-
   const handleDownloadAll = async () => {
     setLoading(true); // Start loading
     const zip = new JSZip();
     let downloadCount = 0;
-
+  
     // Add selected videos to the ZIP
     selectedVideos.forEach((videoId) => {
       const video = videoData.find((v) => v._id === videoId);
@@ -97,7 +96,12 @@ export default function Downloads() {
         fetch(video.url)
           .then((response) => response.blob())
           .then((blob) => {
-            zip.file(video.filename, blob); // Add video to the ZIP file
+            // Ensure the filename ends with .mp4
+            const filename = video.filename.endsWith(".mp4")
+              ? video.filename
+              : `${video.filename}.mp4`; // Add .mp4 if not present
+  
+            zip.file(filename, blob); // Add video to the ZIP file
             downloadCount += 1;
             if (downloadCount === selectedVideos.size) {
               // Once all files are added, generate and trigger the ZIP download
@@ -117,7 +121,7 @@ export default function Downloads() {
       }
     });
   };
-
+  
   useEffect(() => {
     const fetchVideos = async () => {
       try {
