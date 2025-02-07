@@ -25,7 +25,7 @@ const LivePreview = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://server-skgz.onrender.com/check-live/?fromdate=${formattedDate}&todate=${formattedDate}&fromtime=${oneMinuteAgoTime}&totime=${currentTime}&divisename=${selectedDevice}`
+        `https://server-skgz.onrender.com/check-live/?fromdate=${formattedDate}&todate=${formattedDate}&fromtime=${oneMinuteAgoTime}&totime=${currentTime}&deviceName=${selectedDevice}`
       );
       if (response.data.isLive) {
         setIsLive(true);
@@ -46,7 +46,7 @@ const LivePreview = () => {
   const fetchVideos = async () => {
     try {
       const response = await axios.get(
-        `https://server-skgz.onrender.com/find?fromdate=${formattedDate}&todate=${formattedDate}&fromtime=${fromTime}&totime=${toTime}&divisename=${selectedDevice}`
+        `https://server-skgz.onrender.com/find?fromdate=${formattedDate}&todate=${formattedDate}&fromtime=${fromTime}&totime=${toTime}&deviceName=${selectedDevice}`
       );
 
       if (response.data && response.data.length > 0) {
