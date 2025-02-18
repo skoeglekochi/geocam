@@ -181,7 +181,7 @@ const Preview = ({ filter }) => {
           </div>
         </div>
       ) : (
-      <p>No Vidios for today </p>
+      <p>No Videos to Display. </p>
       )}
     </div>
   );
