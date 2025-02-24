@@ -126,7 +126,7 @@ export default function Downloads() {
     const fetchVideos = async () => {
       try {
         const response = await fetch(
-          `https://server-skgz.onrender.com/find?fromdate=${filter.fromDate}&todate=${filter.toDate}&fromtime=${filter.fromTime}&totime=${filter.toTime}&divisename=${filter.selectedDevice}`
+          `https://production-server-tygz.onrender.com/api/dmarg/filtervidios?fromdate=${filter.fromDate}&todate=${filter.toDate}&fromtime=${filter.fromTime}&totime=${filter.toTime}&divisename=${filter.selectedDevice}`
         );
         if (!response.ok) throw new Error("Failed to fetch videos");
         const data = await response.json();
