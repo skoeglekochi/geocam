@@ -25,7 +25,7 @@ const LivePreview = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        https://production-server-tygz.onrender.com/api/dmarg/checklive?fromdate=${formattedDate}&todate=${formattedDate}&fromtime=${oneMinuteAgoTime}&totime=${currentTime}&deviceName=${selectedDevice}`
+        `https://production-server-tygz.onrender.com/api/dmarg/checklive?fromdate=${formattedDate}&todate=${formattedDate}&fromtime=${oneMinuteAgoTime}&totime=${currentTime}&deviceName=${selectedDevice}`
       );
       if (response.data.isLive) {
         setIsLive(true);
