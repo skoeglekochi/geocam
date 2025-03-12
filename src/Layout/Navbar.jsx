@@ -34,6 +34,9 @@ export default function Navbar() {
                 <Link to="/downloads" style={styles.link}>
                 Downloads
                 </Link>
+                <Link to="https://v-marg2-0.onrender.com/login" style={styles.link}>
+               Track
+                </Link>
                
                 {/* <Link to="/login" style={styles.link}>
                     Login

@@ -31,7 +31,7 @@ const LivePreview = () => {
         setIsLive(true);
         fetchVideos(); // Fetch initial videos if live
       } else {
-        setError("Device is not live.");
+        setError("Device is not live."); 
         setIsLive(false);
       }
     } catch (err) {

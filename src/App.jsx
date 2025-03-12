@@ -13,7 +13,8 @@ export default function App() {
        <h1>Home Skoegle</h1>
        <Link to="/preview"> Preview</Link> <br/>
        <Link to="/live"> Live</Link><br/>
-       <Link to="/downloads"> Downloads</Link>
+       <Link to="/downloads"> Downloads</Link> <br/>
+       <Link to="https://v-marg2-0.onrender.com/login"> Track</Link>
         </Layout>
       ),
     },
